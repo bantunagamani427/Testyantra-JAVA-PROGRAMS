@@ -20,6 +20,7 @@ public class Sum_Avg {
 		System.out.println("sum of values:"+sum);
 		double avg=sum/a.length;
 		System.out.println("avg of numbers"+avg);
+		System.out.println("amma");
 	}
 
 }
