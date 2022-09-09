@@ -1,0 +1,180 @@
+Pre requist for RMG yantra Application
+1. MySql database
+	password should be root
+2. Create a database with a name projects
+ syntax: create database projects;
+
+Running RMG yantra application
+open cmd> java -jar <rmgyantra.jar> (--spring.datasource.password=)
+
+=======
+Port already used:- 
+ java -Dserver.port=8085 -jar <rmgyantra.jar> (--spring.datasource.password=password)
+
+username: rmgyantra
+password: rmgy@9999
+
+
+WebUrl:
+protocol://servername:portNumber/resourcepath?query=value
+http://localhost:8084/
+http://localhost:8084/swagger-ui.html#/project-controller
+
+HTTP methods:
+GET:- Used to retrieve the information from the service
+POST:- Used to create a new resource inside a service
+PUT:- Update the existing resource completely
+PATCH:- Update the existing resource partially
+DELETE:- Delete the resource inside service
+CRUD opertion
+C-creation R-Retrive U-Update D- delete
+
+=========================================
+Headers:-
+POST
+http://localhost:8084/addProject
+ContentType: JSON
+Body/Payload:
+{
+  "createdBy": "string",
+  "createdOn": "string",
+  "projectId": "string",
+  "projectName": "string",
+  "status": "string",
+  "teamSize": 0
+}
+
+==================================
+GET
+http://localhost:8084/projects
+===================================
+Difference between put and patch
+PUT: send complete payload/body doing updation
+PATCH: sending partial payload or body for updation
+
+Delete Project
+http://localhost:8084/projects/{project_id}
+
+
+Environment variable:-
+Instead of Hardcoding common data like URL, We can store it as Environment variable
+and we can change it one time if any change required.
+
+How do u call environment variable in request
+syntax:
+{{variableName}} 
+Eg:{{url}}
+
+Global variable:-
+These variable can be accessed for any collection in workspace
+synatx:
+{{variableName}}
+
+
+===========================================
+Different ways to create post request
+1. Body->raw-> added body
+Type->Json
+2. sending a json file
+body-> binary-> select file
+============================================
+Parameters:-
+1. Path parameter:- In order to fetch perticular resource inside a service or parameterizing the path
+{pathParameter}
+2. Query parameter:-Query paramter is used to sort or filter the the response
+synatx: ?query=value
+==================================================
+what is the difference between uri and url
+uri: uniform resource identifier (localhost:8084) name
+url: unoform resource location (localhost:8084/projects) address
+==================================================
+Authentication
+1. Basic Auth:- username and password
+2. Barrier Token:- 
+scope:-read and write
+3. Oauth 1.0:-
+================================
+4. Oauth 2.0:-
+client id
+client secrete
+grant type
+scope
+auth url
+token url
+=======================
+github api
+base uri:-https://api.github.com
+barrier token:  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
+===========================
+Oauth 2.0
+client ID:- 12d1468e9feab7eca9c6
+client secrete:- c601df3de8105f875e86579cd38321881a7a52c1
+redirect url: https://github.com
+
+access token: 
+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
+gho_j4POPAvcSzK937Sp6k0bUB2LkzBVPI0e
+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
+============================================================
+
+validations:
+ To verify that the response is as per our excpection
+1.status code
+2. cookies 
+3. contentType
+4. response Time
+5. response body
+
+PostMan snippets:
+1. status code: status code is 200: - verifing status code
+2. Response header:  contenttype header check
+3. Response Time less than 200ms
+4. Response body json value check
+=================================================
+Request chaining
+Dependency between 2 API request
+Calling one request to another request
+
+Steps:
+1.Response json value we have store in environment variable or global variable
+2. Calling the environment or global variable in another request
+
+======================================================
+Parameterization/Data driven:-
+Reading the data from the external resource 
+Note:- PostMan support only csv and json 
+
+====================================================
+Running a collection in batch in Postman
+-> run collection -> click on Run Collection Name
+==============================================
+Running the collection in command line using newman
+Pre-requist: Node js should be installed
+To check node js installed in pc
+cmd> node -v
+install newman= npm install -g newman
+
+1. Export entire collection in json format
+	-> collection->export-> give extension as .json
+2. Export environment variable in json format
+	-> environment variable -> edit-> export-> extension .json
+3. In command promt
+newman run <collection.json> -e <environment.json>
+
+
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+

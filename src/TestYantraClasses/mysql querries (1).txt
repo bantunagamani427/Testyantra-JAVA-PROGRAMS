@@ -1,0 +1,29 @@
+1. create database students;
+2. use students;
+3. show tables;    // data base in empty
+
+========================================================================================================================================
+4. create table
+=================  
+create table students_info
+(
+regno Int(10) not null,
+firstname varchar(50),
+middlename varchar(50),
+lastname varchar(50),
+Primary key(regno)
+);
+
+
+5. insert data in to database 
+================================
+
+insert into students_info (regno, firstname, middlename, lastname) values('1', 'ram','gowda', 'h');
+
+insert into students_info (regno, firstName, middleName, lastName) values('2', 'sam','linga', 'h');
+
+insert into students_info (regno, firstName, middleName, lastName) values('3', 'bam','bramin', 'h');
+
+6. show database table data
+============================
+select * from students_info;

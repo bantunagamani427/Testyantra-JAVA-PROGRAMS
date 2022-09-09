@@ -14,7 +14,7 @@ public class Remove_Duplicates_In_Sentense {
 			for(int j=0;j<word.length();j++) {
 				char ch = word.charAt(j);
 				if(unique.indexOf(ch)==-1) {
-					unique=unique+" "+ch;
+					unique=unique+ch;
 				}
 			}
 
